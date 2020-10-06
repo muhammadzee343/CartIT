@@ -1,6 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import OnboardingScreen from './screens/onboardingScreen';
+import SecondScreen from './screens/second';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 class App extends React.Component {
   componentDidMount() {
@@ -11,9 +17,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Running</Text>
-      </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="onbord" component={OnboardingScreen} />
+          <Stack.Screen name="second" component={SecondScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
