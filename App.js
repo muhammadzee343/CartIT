@@ -2,11 +2,23 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import OnboardingScreen from './screens/onboardingScreen';
-import SecondScreen from './screens/second';
+import SignupOrLogin from './screens/SignupOrLogin';
+import LoginScreen from './screens/Login';
+import ProfileScreen from './screens/Profile';
+import HomeScreen from './screens/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
+const StackHome = createStackNavigator();
+
+function HomeNavigator() {
+  return (
+    <StackHome.Navigator>
+      <StackHome.Screen name="Home" component={HomeScreen} />
+    </StackHome.Navigator>
+  );
+}
 
 class App extends React.Component {
   componentDidMount() {
@@ -18,9 +30,12 @@ class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator headerMode="none">
           <Stack.Screen name="onbord" component={OnboardingScreen} />
-          <Stack.Screen name="second" component={SecondScreen} />
+          <Stack.Screen name="loginorsigup" component={SignupOrLogin} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="HomeNav" component={HomeNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     );

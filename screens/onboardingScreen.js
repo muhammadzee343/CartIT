@@ -6,15 +6,15 @@ class OnboardingScreen extends React.Component {
   render() {
     return (
       <Onboarding
-        onSkip={() => this.props.navigation.navigate('second')}
-        onDone={() => this.props.navigation.navigate('second')}
+        onSkip={() => this.props.navigation.navigate('loginorsigup')}
+        onDone={() => this.props.navigation.navigate('loginorsigup')}
         pages={[
           {
             backgroundColor: '#fff',
             image: (
               <Image
                 source={require('../images/obj-1.png')}
-                style={{height: '40%', width: '70%'}}
+                style={{height: 300, width: 200}}
               />
             ),
             title: 'Onboarding',
@@ -25,7 +25,7 @@ class OnboardingScreen extends React.Component {
             image: (
               <Image
                 source={require('../images/obj-2.png')}
-                style={{height: '60%', width: '60%'}}
+                style={{height: 300, width: 200}}
               />
             ),
             title: 'The Title',
@@ -36,7 +36,7 @@ class OnboardingScreen extends React.Component {
             image: (
               <Image
                 source={require('../images/obj-3.png')}
-                style={{height: '60%', width: '60%'}}
+                style={{height: 300, width: 200}}
               />
             ),
             title: 'Triangle',
